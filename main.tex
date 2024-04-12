@@ -1,0 +1,62 @@
+\documentclass[
+    11pt,
+    a4paper,
+    headsepline,
+    footsepline,
+    DIV=13,
+    BCOR=12mm,
+    oneside
+    % twoside
+]{scrbook}
+\usepackage[]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\usepackage[T1]{fontenc}
+\usepackage[english,ngerman]{babel}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+
+\input{commands}
+
+    
+\begin{document}
+    \input{preamble/_index}
+
+    \selectlanguage{english}
+
+    \pagenumbering{roman}
+
+    \input{preamble/abstract}
+    
+    \tableofcontents
+    \newpage
+    \listoffigures
+    % \newpage
+    % \listoftables
+    \newpage
+    \pagenumbering{arabic}
+
+    \renewcommand{\figureautorefname}{Figure}
+    \renewcommand{\tableautorefname}{Table}
+    \renewcommand{\partautorefname}{Part}
+    \renewcommand{\appendixautorefname}{Appendix}
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Section}
+    \renewcommand{\subsubsectionautorefname}{Section}
+
+    \input{chapters/_index}
+
+    \bibliography{bibliography}
+    \bibliographystyle{unsrt}
+\end{document}
+
